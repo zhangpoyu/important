@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="poyu:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>poyu</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="bbs2016.war">
+      <element id="artifact" artifact-name="poyu:war exploded" />
+    </root>
+  </artifact>
+</component>

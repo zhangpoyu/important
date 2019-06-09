@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.SchemaAutoIncrementColumnsEntity" table="schema_auto_increment_columns" schema="sys">
+        <property name="tableSchema">
+            <column name="table_schema" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="tableName">
+            <column name="table_name" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="columnName">
+            <column name="column_name" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="dataType">
+            <column name="data_type" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="columnType">
+            <column name="column_type" sql-type="longtext"/>
+        </property>
+        <property name="isSigned">
+            <column name="is_signed" sql-type="int(1)"/>
+        </property>
+        <property name="isUnsigned">
+            <column name="is_unsigned" sql-type="int(1)"/>
+        </property>
+        <property name="maxValue">
+            <column name="max_value" sql-type="bigint(21) unsigned" not-null="true"/>
+        </property>
+        <property name="autoIncrement">
+            <column name="auto_increment" sql-type="bigint(21) unsigned" not-null="true"/>
+        </property>
+        <property name="autoIncrementRatio">
+            <column name="auto_increment_ratio" sql-type="decimal(25,4) unsigned" precision="25" scale="4"
+                    not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

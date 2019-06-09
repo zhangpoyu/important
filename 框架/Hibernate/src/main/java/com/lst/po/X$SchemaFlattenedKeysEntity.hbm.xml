@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.X$SchemaFlattenedKeysEntity" table="x$schema_flattened_keys" schema="sys">
+        <property name="tableSchema">
+            <column name="table_schema" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="tableName">
+            <column name="table_name" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="indexName">
+            <column name="index_name" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="nonUnique">
+            <column name="non_unique" sql-type="bigint(1)" not-null="true"/>
+        </property>
+        <property name="subpartExists">
+            <column name="subpart_exists" sql-type="bigint(1)" not-null="true"/>
+        </property>
+        <property name="indexColumns">
+            <column name="index_columns" sql-type="text" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

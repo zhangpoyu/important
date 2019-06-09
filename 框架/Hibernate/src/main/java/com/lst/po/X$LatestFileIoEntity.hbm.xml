@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.X$LatestFileIoEntity" table="x$latest_file_io" schema="sys">
+        <property name="thread">
+            <column name="thread" sql-type="varchar(149)" length="149" not-null="true"/>
+        </property>
+        <property name="file">
+            <column name="file" sql-type="varchar(512)" length="512" not-null="true"/>
+        </property>
+        <property name="latency">
+            <column name="latency" sql-type="bigint(20) unsigned" not-null="true"/>
+        </property>
+        <property name="operation">
+            <column name="operation" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="requested">
+            <column name="requested" sql-type="bigint(20)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

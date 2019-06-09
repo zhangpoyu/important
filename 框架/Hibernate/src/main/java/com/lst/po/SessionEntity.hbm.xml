@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.SessionEntity" table="session" schema="sys">
+        <property name="thdId">
+            <column name="thd_id" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="connId">
+            <column name="conn_id" sql-type="bigint(20) unsigned" not-null="true"/>
+        </property>
+        <property name="user">
+            <column name="user" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="db">
+            <column name="db" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="command">
+            <column name="command" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="time">
+            <column name="time" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="currentStatement">
+            <column name="current_statement" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="statementLatency">
+            <column name="statement_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="progress">
+            <column name="progress" sql-type="decimal(26,2)" precision="26" scale="2" not-null="true"/>
+        </property>
+        <property name="lockLatency">
+            <column name="lock_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="rowsExamined">
+            <column name="rows_examined" sql-type="bigint(20) unsigned" not-null="true"/>
+        </property>
+        <property name="rowsSent">
+            <column name="rows_sent" sql-type="bigint(20) unsigned" not-null="true"/>
+        </property>
+        <property name="rowsAffected">
+            <column name="rows_affected" sql-type="bigint(20) unsigned" not-null="true"/>
+        </property>
+        <property name="tmpTables">
+            <column name="tmp_tables" sql-type="bigint(20) unsigned" not-null="true"/>
+        </property>
+        <property name="tmpDiskTables">
+            <column name="tmp_disk_tables" sql-type="bigint(20) unsigned" not-null="true"/>
+        </property>
+        <property name="fullScan">
+            <column name="full_scan" sql-type="varchar(3)" length="3"/>
+        </property>
+        <property name="lastStatement">
+            <column name="last_statement" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="lastStatementLatency">
+            <column name="last_statement_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="currentMemory">
+            <column name="current_memory" sql-type="text" not-null="true"/>
+        </property>
+        <property name="lastWait">
+            <column name="last_wait" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="lastWaitLatency">
+            <column name="last_wait_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="source">
+            <column name="source" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="trxLatency">
+            <column name="trx_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="trxState">
+            <column name="trx_state" sql-type="enum('active', 'committed', 'rolled back')" not-null="true"/>
+        </property>
+        <property name="trxAutocommit">
+            <column name="trx_autocommit" sql-type="enum('yes', 'no')" not-null="true"/>
+        </property>
+        <property name="pid">
+            <column name="pid" sql-type="varchar(1024)" length="1024" not-null="true"/>
+        </property>
+        <property name="programName">
+            <column name="program_name" sql-type="varchar(1024)" length="1024" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

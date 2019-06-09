@@ -1,0 +1,30 @@
+package action;
+
+import java.util.Arrays;
+
+
+import javax.servlet.http.HttpServletRequest;
+
+
+import org.apache.struts2.interceptor.ServletRequestAware;
+
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class GetFormDataAction extends ActionSupport implements ServletRequestAware {
+    // 通过接口注入方式直接得到request对象
+    private HttpServletRequest request;
+    @Override
+    public void setServletRequest(HttpServletRequest request) {
+        this.request = request;
+    }
+
+    public String execute() {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String[] habits = request.getParameterValues("habits");
+        System.out.println("[username:"+username+"]"+"[password:"+password+"]"+"[habits:"+ Arrays.toString(habits)+"]");
+        return NONE;
+    }
+}
+

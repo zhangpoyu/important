@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.StatementsWithFullTableScansEntity" table="statements_with_full_table_scans" schema="sys">
+        <property name="query">
+            <column name="query" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="db">
+            <column name="db" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="execCount">
+            <column name="exec_count" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="totalLatency">
+            <column name="total_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="noIndexUsedCount">
+            <column name="no_index_used_count" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="noGoodIndexUsedCount">
+            <column name="no_good_index_used_count" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="noIndexUsedPct">
+            <column name="no_index_used_pct" sql-type="decimal(24)" precision="24"/>
+        </property>
+        <property name="rowsSent">
+            <column name="rows_sent" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsExamined">
+            <column name="rows_examined" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsSentAvg">
+            <column name="rows_sent_avg" sql-type="decimal(21) unsigned" precision="21" not-null="true"/>
+        </property>
+        <property name="rowsExaminedAvg">
+            <column name="rows_examined_avg" sql-type="decimal(21) unsigned" precision="21" not-null="true"/>
+        </property>
+        <property name="firstSeen">
+            <column name="first_seen" sql-type="timestamp"/>
+        </property>
+        <property name="lastSeen">
+            <column name="last_seen" sql-type="timestamp"/>
+        </property>
+        <property name="digest">
+            <column name="digest" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.X$SchemaTableStatisticsEntity" table="x$schema_table_statistics" schema="sys">
+        <property name="tableSchema">
+            <column name="table_schema" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="tableName">
+            <column name="table_name" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="totalLatency">
+            <column name="total_latency" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsFetched">
+            <column name="rows_fetched" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="fetchLatency">
+            <column name="fetch_latency" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsInserted">
+            <column name="rows_inserted" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="insertLatency">
+            <column name="insert_latency" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsUpdated">
+            <column name="rows_updated" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="updateLatency">
+            <column name="update_latency" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsDeleted">
+            <column name="rows_deleted" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="deleteLatency">
+            <column name="delete_latency" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="ioReadRequests">
+            <column name="io_read_requests" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="ioRead">
+            <column name="io_read" sql-type="decimal(41)" precision="41" not-null="true"/>
+        </property>
+        <property name="ioReadLatency">
+            <column name="io_read_latency" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="ioWriteRequests">
+            <column name="io_write_requests" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="ioWrite">
+            <column name="io_write" sql-type="decimal(41)" precision="41" not-null="true"/>
+        </property>
+        <property name="ioWriteLatency">
+            <column name="io_write_latency" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="ioMiscRequests">
+            <column name="io_misc_requests" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="ioMiscLatency">
+            <column name="io_misc_latency" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

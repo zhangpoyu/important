@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.InnodbLockWaitsEntity" table="innodb_lock_waits" schema="sys">
+        <property name="waitStarted">
+            <column name="wait_started" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="waitAge">
+            <column name="wait_age" sql-type="time" not-null="true"/>
+        </property>
+        <property name="waitAgeSecs">
+            <column name="wait_age_secs" sql-type="bigint(21)" not-null="true"/>
+        </property>
+        <property name="lockedTable">
+            <column name="locked_table" sql-type="varchar(1024)" length="1024"/>
+        </property>
+        <property name="lockedIndex">
+            <column name="locked_index" sql-type="varchar(1024)" length="1024" not-null="true"/>
+        </property>
+        <property name="lockedType">
+            <column name="locked_type" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="waitingTrxId">
+            <column name="waiting_trx_id" sql-type="varchar(18)" length="18"/>
+        </property>
+        <property name="waitingTrxStarted">
+            <column name="waiting_trx_started" sql-type="datetime"/>
+        </property>
+        <property name="waitingTrxAge">
+            <column name="waiting_trx_age" sql-type="time" not-null="true"/>
+        </property>
+        <property name="waitingTrxRowsLocked">
+            <column name="waiting_trx_rows_locked" sql-type="bigint(21) unsigned"/>
+        </property>
+        <property name="waitingTrxRowsModified">
+            <column name="waiting_trx_rows_modified" sql-type="bigint(21) unsigned"/>
+        </property>
+        <property name="waitingPid">
+            <column name="waiting_pid" sql-type="bigint(21) unsigned"/>
+        </property>
+        <property name="waitingQuery">
+            <column name="waiting_query" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="waitingLockId">
+            <column name="waiting_lock_id" sql-type="varchar(81)" length="81"/>
+        </property>
+        <property name="waitingLockMode">
+            <column name="waiting_lock_mode" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="blockingTrxId">
+            <column name="blocking_trx_id" sql-type="varchar(18)" length="18"/>
+        </property>
+        <property name="blockingPid">
+            <column name="blocking_pid" sql-type="bigint(21) unsigned"/>
+        </property>
+        <property name="blockingQuery">
+            <column name="blocking_query" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="blockingLockId">
+            <column name="blocking_lock_id" sql-type="varchar(81)" length="81"/>
+        </property>
+        <property name="blockingLockMode">
+            <column name="blocking_lock_mode" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="blockingTrxStarted">
+            <column name="blocking_trx_started" sql-type="datetime"/>
+        </property>
+        <property name="blockingTrxAge">
+            <column name="blocking_trx_age" sql-type="time" not-null="true"/>
+        </property>
+        <property name="blockingTrxRowsLocked">
+            <column name="blocking_trx_rows_locked" sql-type="bigint(21) unsigned"/>
+        </property>
+        <property name="blockingTrxRowsModified">
+            <column name="blocking_trx_rows_modified" sql-type="bigint(21) unsigned"/>
+        </property>
+        <property name="sqlKillBlockingQuery">
+            <column name="sql_kill_blocking_query" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="sqlKillBlockingConnection">
+            <column name="sql_kill_blocking_connection" sql-type="varchar(26)" length="26" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

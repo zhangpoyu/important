@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.IoGlobalByFileByBytesEntity" table="io_global_by_file_by_bytes" schema="sys">
+        <property name="file">
+            <column name="file" sql-type="varchar(512)" length="512" not-null="true"/>
+        </property>
+        <property name="countRead">
+            <column name="count_read" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="totalRead">
+            <column name="total_read" sql-type="text" not-null="true"/>
+        </property>
+        <property name="avgRead">
+            <column name="avg_read" sql-type="text" not-null="true"/>
+        </property>
+        <property name="countWrite">
+            <column name="count_write" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="totalWritten">
+            <column name="total_written" sql-type="text" not-null="true"/>
+        </property>
+        <property name="avgWrite">
+            <column name="avg_write" sql-type="text" not-null="true"/>
+        </property>
+        <property name="total">
+            <column name="total" sql-type="text" not-null="true"/>
+        </property>
+        <property name="writePct">
+            <column name="write_pct" sql-type="decimal(26,2)" precision="26" scale="2"/>
+        </property>
+    </class>
+</hibernate-mapping>

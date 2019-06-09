@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.StatementsWithErrorsOrWarningsEntity" table="statements_with_errors_or_warnings"
+           schema="sys">
+        <property name="query">
+            <column name="query" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="db">
+            <column name="db" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="execCount">
+            <column name="exec_count" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="errors">
+            <column name="errors" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="errorPct">
+            <column name="error_pct" sql-type="decimal(27,4)" precision="27" scale="4"/>
+        </property>
+        <property name="warnings">
+            <column name="warnings" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="warningPct">
+            <column name="warning_pct" sql-type="decimal(27,4)" precision="27" scale="4"/>
+        </property>
+        <property name="firstSeen">
+            <column name="first_seen" sql-type="timestamp"/>
+        </property>
+        <property name="lastSeen">
+            <column name="last_seen" sql-type="timestamp"/>
+        </property>
+        <property name="digest">
+            <column name="digest" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

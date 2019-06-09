@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.X$MemoryByThreadByCurrentBytesEntity" table="x$memory_by_thread_by_current_bytes"
+           schema="sys">
+        <property name="threadId">
+            <column name="thread_id" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="user">
+            <column name="user" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="currentCountUsed">
+            <column name="current_count_used" sql-type="decimal(41)" precision="41" not-null="true"/>
+        </property>
+        <property name="currentAllocated">
+            <column name="current_allocated" sql-type="decimal(41)" precision="41" not-null="true"/>
+        </property>
+        <property name="currentAvgAlloc">
+            <column name="current_avg_alloc" sql-type="decimal(45,4)" precision="45" scale="4"/>
+        </property>
+        <property name="currentMaxAlloc">
+            <column name="current_max_alloc" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="totalAllocated">
+            <column name="total_allocated" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

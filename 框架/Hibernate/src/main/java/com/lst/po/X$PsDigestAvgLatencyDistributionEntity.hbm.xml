@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.X$PsDigestAvgLatencyDistributionEntity" table="x$ps_digest_avg_latency_distribution"
+           schema="sys">
+        <property name="cnt">
+            <column name="cnt" sql-type="bigint(21)"/>
+        </property>
+        <property name="avgUs">
+            <column name="avg_us" sql-type="decimal(21)" precision="21" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

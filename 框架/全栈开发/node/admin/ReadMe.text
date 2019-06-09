@@ -1,0 +1,4 @@
+开发时注销src/man.js下的
+if (process.env.NODE_ENV === 'development') {
+  require('./mock')
+}

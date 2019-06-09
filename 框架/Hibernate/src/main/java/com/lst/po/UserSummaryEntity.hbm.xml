@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.UserSummaryEntity" table="user_summary" schema="sys">
+        <id name="id"/>
+        <property name="user">
+            <column name="user" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="statements">
+            <column name="statements" sql-type="decimal(64)" precision="64" not-null="true"/>
+        </property>
+        <property name="statementLatency">
+            <column name="statement_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="statementAvgLatency">
+            <column name="statement_avg_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="tableScans">
+            <column name="table_scans" sql-type="decimal(65)" precision="65" not-null="true"/>
+        </property>
+        <property name="fileIos">
+            <column name="file_ios" sql-type="decimal(64)" precision="64" not-null="true"/>
+        </property>
+        <property name="fileIoLatency">
+            <column name="file_io_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="currentConnections">
+            <column name="current_connections" sql-type="decimal(41)" precision="41" not-null="true"/>
+        </property>
+        <property name="totalConnections">
+            <column name="total_connections" sql-type="decimal(41)" precision="41" not-null="true"/>
+        </property>
+        <property name="uniqueHosts">
+            <column name="unique_hosts" sql-type="bigint(21)"/>
+        </property>
+        <property name="currentMemory">
+            <column name="current_memory" sql-type="text" not-null="true"/>
+        </property>
+        <property name="totalMemoryAllocated">
+            <column name="total_memory_allocated" sql-type="text" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

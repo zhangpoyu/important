@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.UserSummaryByStatementLatencyEntity" table="user_summary_by_statement_latency"
+           schema="sys">
+        <property name="user">
+            <column name="user" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="total">
+            <column name="total" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="totalLatency">
+            <column name="total_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="maxLatency">
+            <column name="max_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="lockLatency">
+            <column name="lock_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="rowsSent">
+            <column name="rows_sent" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="rowsExamined">
+            <column name="rows_examined" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="rowsAffected">
+            <column name="rows_affected" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="fullScans">
+            <column name="full_scans" sql-type="decimal(43)" precision="43" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+package action;
+
+import java.util.Arrays;
+import java.util.Map;
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+<h2>Struts2-Demo</h2>
+<form action="<%=request.getContextPath()%>/getFormData.action" method="post">
+  用户名：<input type="text" name="username"/><br/>
+  密码：<input type="text" name="password"/><br/>
+  兴趣爱好：<input type="checkbox" name="habits" value="足球">足球</input>
+  <input type="checkbox" name="habits" value="篮球">篮球</input>
+  <input type="checkbox" name="habits" value="羽毛球">羽毛球</input>
+  <input type="checkbox" name="habits" value="乒乓球">乒乓球</input>
+  <br/>
+  <input type="submit" value="提交"/>
+</form>
+</form>
+</body>
+</html>
+
+import java.util.Set;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+
+
+public class GetFormDataAction extends ActionSupport{
+    public String execute() {
+        ActionContext context = ActionContext.getContext();
+        Map<String, Object> params = context.getParameters();
+        Set<String> keys = params.keySet();
+        for(String key : keys) {
+            // 返回数组类型
+            Object[] obj = (Object[]) params.get(key);
+            System.out.println(key+"="+ Arrays.toString(obj));
+        }
+        return NONE;
+    }
+
+}

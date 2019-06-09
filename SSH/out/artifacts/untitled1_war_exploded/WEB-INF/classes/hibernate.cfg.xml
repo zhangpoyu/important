@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings 数据库连接配置-->
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+        <property name="connection.username">poyu</property>
+        <property name="connection.password">poyu</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect 方言-->
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+
+        <!-- Echo all executed SQL to stdout 在控制台打印后台sql语句-->
+        <property name="show_sql">true</property>
+        <!-- 格式化语句 -->
+        <property name="format_sql">true</property>
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+        <!-- 关联小配置 -->
+        <mapping resource="cn/entity/student.hbm.xml" />
+
+    </session-factory>
+
+</hibernate-configuration>

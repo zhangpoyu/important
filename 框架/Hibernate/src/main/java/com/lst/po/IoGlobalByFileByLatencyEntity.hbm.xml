@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.IoGlobalByFileByLatencyEntity" table="io_global_by_file_by_latency" schema="sys">
+        <property name="file">
+            <column name="file" sql-type="varchar(512)" length="512" not-null="true"/>
+        </property>
+        <property name="total">
+            <column name="total" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="totalLatency">
+            <column name="total_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="countRead">
+            <column name="count_read" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="readLatency">
+            <column name="read_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="countWrite">
+            <column name="count_write" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="writeLatency">
+            <column name="write_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="countMisc">
+            <column name="count_misc" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="miscLatency">
+            <column name="misc_latency" sql-type="text" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

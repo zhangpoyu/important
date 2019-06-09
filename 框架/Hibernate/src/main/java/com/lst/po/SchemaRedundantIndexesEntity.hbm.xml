@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.SchemaRedundantIndexesEntity" table="schema_redundant_indexes" schema="sys">
+        <property name="tableSchema">
+            <column name="table_schema" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="tableName">
+            <column name="table_name" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="redundantIndexName">
+            <column name="redundant_index_name" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="redundantIndexColumns">
+            <column name="redundant_index_columns" sql-type="text" not-null="true"/>
+        </property>
+        <property name="redundantIndexNonUnique">
+            <column name="redundant_index_non_unique" sql-type="bigint(1)" not-null="true"/>
+        </property>
+        <property name="dominantIndexName">
+            <column name="dominant_index_name" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="dominantIndexColumns">
+            <column name="dominant_index_columns" sql-type="text" not-null="true"/>
+        </property>
+        <property name="dominantIndexNonUnique">
+            <column name="dominant_index_non_unique" sql-type="bigint(1)" not-null="true"/>
+        </property>
+        <property name="subpartExists">
+            <column name="subpart_exists" sql-type="int(1)"/>
+        </property>
+        <property name="sqlDropIndex">
+            <column name="sql_drop_index" sql-type="varchar(223)" length="223" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

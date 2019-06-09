@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.StatementAnalysisEntity" table="statement_analysis" schema="sys">
+        <property name="query">
+            <column name="query" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="db">
+            <column name="db" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="fullScan">
+            <column name="full_scan" sql-type="varchar(1)" length="1"/>
+        </property>
+        <property name="execCount">
+            <column name="exec_count" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="errCount">
+            <column name="err_count" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="warnCount">
+            <column name="warn_count" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="totalLatency">
+            <column name="total_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="maxLatency">
+            <column name="max_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="avgLatency">
+            <column name="avg_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="lockLatency">
+            <column name="lock_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="rowsSent">
+            <column name="rows_sent" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsSentAvg">
+            <column name="rows_sent_avg" sql-type="decimal(21)" precision="21"/>
+        </property>
+        <property name="rowsExamined">
+            <column name="rows_examined" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsExaminedAvg">
+            <column name="rows_examined_avg" sql-type="decimal(21)" precision="21"/>
+        </property>
+        <property name="rowsAffected">
+            <column name="rows_affected" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsAffectedAvg">
+            <column name="rows_affected_avg" sql-type="decimal(21)" precision="21"/>
+        </property>
+        <property name="tmpTables">
+            <column name="tmp_tables" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="tmpDiskTables">
+            <column name="tmp_disk_tables" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="rowsSorted">
+            <column name="rows_sorted" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="sortMergePasses">
+            <column name="sort_merge_passes" sql-type="bigint(20) unsigned"/>
+        </property>
+        <property name="digest">
+            <column name="digest" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="firstSeen">
+            <column name="first_seen" sql-type="timestamp"/>
+        </property>
+        <property name="lastSeen">
+            <column name="last_seen" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+import com.java4less.ocr.tess.OCRFacade;
+
+public class Test {
+    public static void main(String args[])
+    {
+        OCRFacade facade = new OCRFacade();
+        try{
+            String text = facade.recognizeFile("D:\\a\\a.jpg" , "eng");
+            System.out.println("Text in the picture is:");
+            System.out.println(text);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+}

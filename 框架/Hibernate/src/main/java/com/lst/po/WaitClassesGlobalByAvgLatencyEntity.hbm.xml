@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.WaitClassesGlobalByAvgLatencyEntity" table="wait_classes_global_by_avg_latency"
+           schema="sys">
+        <property name="eventClass">
+            <column name="event_class" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="total">
+            <column name="total" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="totalLatency">
+            <column name="total_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="minLatency">
+            <column name="min_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="avgLatency">
+            <column name="avg_latency" sql-type="text" not-null="true"/>
+        </property>
+        <property name="maxLatency">
+            <column name="max_latency" sql-type="text" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.X$PsSchemaTableStatisticsIoEntity" table="x$ps_schema_table_statistics_io" schema="sys">
+        <property name="tableSchema">
+            <column name="table_schema" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="tableName">
+            <column name="table_name" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="countRead">
+            <column name="count_read" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="sumNumberOfBytesRead">
+            <column name="sum_number_of_bytes_read" sql-type="decimal(41)" precision="41" not-null="true"/>
+        </property>
+        <property name="sumTimerRead">
+            <column name="sum_timer_read" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="countWrite">
+            <column name="count_write" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="sumNumberOfBytesWrite">
+            <column name="sum_number_of_bytes_write" sql-type="decimal(41)" precision="41" not-null="true"/>
+        </property>
+        <property name="sumTimerWrite">
+            <column name="sum_timer_write" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="countMisc">
+            <column name="count_misc" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+        <property name="sumTimerMisc">
+            <column name="sum_timer_misc" sql-type="decimal(42)" precision="42" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

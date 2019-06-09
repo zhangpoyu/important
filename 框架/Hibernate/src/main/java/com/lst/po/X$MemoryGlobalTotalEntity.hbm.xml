@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lst.po.X$MemoryGlobalTotalEntity" table="x$memory_global_total" schema="sys">
+        <property name="totalAllocated">
+            <column name="total_allocated" sql-type="decimal(41)" precision="41" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

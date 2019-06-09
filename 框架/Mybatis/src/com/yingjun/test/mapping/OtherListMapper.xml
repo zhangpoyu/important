@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yingjun.test.dao.OtherListMapper">
+  <resultMap id="BaseResultMap" type="com.yingjun.test.model.OtherList">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="car_number" jdbcType="VARCHAR" property="carNumber" />
+    <result column="unrule_record" jdbcType="VARCHAR" property="unruleRecord" />
+    <result column="unrule_reason" jdbcType="VARCHAR" property="unruleReason" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, number, car_number, unrule_record, unrule_reason
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_unrule
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_unrule
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yingjun.test.model.OtherList">
+    insert into t_unrule (id, name, number, 
+      car_number, unrule_record, unrule_reason
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{carNumber,jdbcType=VARCHAR}, #{unruleRecord,jdbcType=VARCHAR}, #{unruleReason,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yingjun.test.model.OtherList">
+    insert into t_unrule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="carNumber != null">
+        car_number,
+      </if>
+      <if test="unruleRecord != null">
+        unrule_record,
+      </if>
+      <if test="unruleReason != null">
+        unrule_reason,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="carNumber != null">
+        #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="unruleRecord != null">
+        #{unruleRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="unruleReason != null">
+        #{unruleReason,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yingjun.test.model.OtherList">
+    update t_unrule
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        number = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="carNumber != null">
+        car_number = #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="unruleRecord != null">
+        unrule_record = #{unruleRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="unruleReason != null">
+        unrule_reason = #{unruleReason,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yingjun.test.model.OtherList">
+    update t_unrule
+    set name = #{name,jdbcType=VARCHAR},
+      number = #{number,jdbcType=VARCHAR},
+      car_number = #{carNumber,jdbcType=VARCHAR},
+      unrule_record = #{unruleRecord,jdbcType=VARCHAR},
+      unrule_reason = #{unruleReason,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
