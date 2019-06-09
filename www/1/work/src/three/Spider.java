@@ -1,9 +1,9 @@
 package three;
 
+import org.htmlparser.util.ParserException;
+
 import java.io.IOException;
 import java.util.LinkedList;
-
-import org.htmlparser.util.ParserException;
 
 public class Spider {
 	//定义一个队列

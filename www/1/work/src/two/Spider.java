@@ -1,7 +1,5 @@
 package two;
 
-import java.io.IOException;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -12,6 +10,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.io.IOException;
 
 public class Spider {
 	private static Queue<String> queue= new Queue<>();
@@ -41,7 +41,7 @@ public class Spider {
 			return html;
 		}
 	}
-	
+
 
 	/**
 	 * 解析网页，从网页中提取URL,并将其存入队列中
@@ -66,7 +66,7 @@ public class Spider {
 		}
 		return queue;
 	}
-	
+
 	public static void main(String[] args) throws IOException {
 		Spider spider = new Spider();
 		String string = "https://book.douban.com/tag/web?start=20&type=T";

@@ -1,10 +1,5 @@
 package one;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-
-import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -16,6 +11,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.net.URL;
 
 public class crawl {
 	public String learnUrl(String string) throws Exception {
@@ -33,7 +30,7 @@ public class crawl {
 			System.out.println("该URL的相对路径："+relativePath);
 			System.out.println("该URL的参数："+params);
 		}
-		
+
 		CloseableHttpClient hClient= HttpClients.createDefault();
 		HttpGet get = new HttpGet(string);
 		CloseableHttpResponse cResponse = null;
@@ -47,7 +44,7 @@ public class crawl {
 			System.out.println(html);
 			System.out.println("********************");
 			EntityUtils.consume(httpEntity);
-			
+
 			//获取连接状态码
 			StatusLine statusCode = cResponse.getStatusLine();
 			System.out.println(statusCode);
@@ -83,7 +80,7 @@ public class crawl {
 			}
 		}
 	}
-	
+
 	public static void main(String[] args) throws Exception {
 		crawl crawl = new crawl();
 		//若URL为相对路径，则在其前拼接上相应的域名即可：比如相对路径为/tag/web，拼接完成后为：https://book.douban.com/tag/web

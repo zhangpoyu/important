@@ -1,14 +1,13 @@
 package three;
 
-import java.io.IOException;
-import java.util.LinkedList;
-
 import org.htmlparser.Node;
 import org.htmlparser.Parser;
 import org.htmlparser.filters.TagNameFilter;
 import org.htmlparser.tags.LinkTag;
 import org.htmlparser.util.NodeList;
 import org.htmlparser.util.ParserException;
+
+import java.util.LinkedList;
 
 public class HtmlParserTool {
 	public static LinkedList<String> hParser(String html) throws ParserException {
@@ -39,7 +38,7 @@ public class HtmlParserTool {
 		return null;
 	}
 }
-	
+
 //	public static void main(String[] args)  {
 //		HttpClientTool spider = new HttpClientTool();
 //		String html = null;
@@ -67,7 +66,7 @@ public class HtmlParserTool {
 //				System.out.println(++i+","+lists.poll());
 //			}
 //		}
-//		
+//
 //	}
 
 //}

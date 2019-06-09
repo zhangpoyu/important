@@ -1,6 +1,5 @@
 package three;
 
-import java.io.IOException;
 import org.apache.http.HttpEntity;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -8,6 +7,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+
+import java.io.IOException;
 
 public class HttpClientTool {
 	@SuppressWarnings("finally")
@@ -38,7 +39,7 @@ public class HttpClientTool {
 			}
 		} catch (Exception e) {
 			System.out.println("url:"+string+"  出现错误，无法请求");
-			
+
 		} finally {
 //			cResponse.close();
 //			System.out.println("处理完成");
